@@ -116,12 +116,23 @@ public class LogSearch implements MouseListener {
 			
 		}else if(e.getSource() == view) {
 			
-			for (int i = 1; i < names.size()+1; i++) {
+			String finalInt = "";
+			
+			for(Integer i : names.keySet()){
 				
-				JOptionPane.showMessageDialog(null, "Id: " + i + " Name: " + names.get(i));
+				finalInt += "Key #"+ i+ ": "+ names.get(i) +"\n";
 				
 				
 			}
+			JOptionPane.showMessageDialog(null, finalInt);
+			
+		}else if(e.getSource() == remove) {
+			
+			String ask = JOptionPane.showInputDialog(null, "Id: ");
+			
+			int ask2 = Integer.parseInt(ask);
+			
+			names.remove(ask2);
 			
 		}
 		
